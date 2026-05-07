@@ -28,44 +28,118 @@ const barObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 document.querySelectorAll('#about .about-aside').forEach(el => barObs.observe(el));
 
+
+
 // messages send
 
-async function sendMessages(){
-  emailjs.init("iPdbLcLSPnXHFXb6t"); // Clé Public
+emailjs.init("iPdbLcLSPnXHFXb6t");
 
-  // rrcuperation des donnes
+const form = document.getElementById("contactForm");
+const sendBtn = document.getElementById("sendBtn");
 
- const nom = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const sujet = document.getElementById("sujet").value;
-  const message = document.getElementById("messages").value;
+form.addEventListener("submit", sendMessages);
 
-  //alert(nom+' '+email+" "+sujet+" "+message);
-  ////alert("bb")
+async function sendMessages(event) {
 
-  //verification et validation des donnees
+  event.preventDefault();
 
-  if(!nom || !email || !message){
+  // ===== LIMITATION 5 MESSAGES / JOUR =====
+
+  const today = new Date().toDateString();
+
+  let messageData = JSON.parse(localStorage.getItem("messageLimit")) || {
+    date: today,
+    count: 0
+  };
+
+  // Reset si nouveau jour
+  if (messageData.date !== today) {
+    messageData = {
+      date: today,
+      count: 0
+    };
+  }
+
+  // Limite atteinte
+  if (messageData.count >= 5) {
+    alert("❌ Limite de 5 messages atteinte aujourd'hui.");
     return;
   }
 
-  //nous allons creer un message
+  // ===== RECUPERATION DES DONNEES =====
 
-  const templateṔarams = {
-    from_name: nom,
-    from_email: email,
-    subject:    sujet,
-    message:    message,
-    to_email: "mezatiogeril@gamil.com"
-  };
+  const nom = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const sujet = document.getElementById("sujet").value.trim();
+  const message = document.getElementById("messages").value.trim();
 
-  try{
-    await emailjs.send("service_6l8ib8o","template_ogls1i6",templateṔarams);
-    alert("✅ Message envoyé avec succès !");
+  // ===== VALIDATIONS =====
 
-  } catch (error) {
-  console.log("Erreur complète:", error);  // ← regarde ici dans F12
-  alert("❌ Erreur: " + error.text);
+  if (!nom || !email || !message) {
+    alert("Veuillez remplir tous les champs obligatoires.");
+    return;
   }
 
+  // Validation email
+  const emailRegex =
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRegex.test(email)) {
+    alert("Adresse email invalide.");
+    return;
+  }
+
+  // Anti spam simple
+  if (message.length < 10) {
+    alert("Message trop court.");
+    return;
+  }
+
+  // ===== BLOCAGE BOUTON =====
+
+  sendBtn.disabled = true;
+  sendBtn.innerText = "Envoi en cours...";
+
+  // ===== PARAMETRES EMAIL =====
+
+  const templateParams = {
+    from_name: nom,
+    from_email: email,
+    subject: sujet,
+    message: message,
+    to_email: "mezatiogeril@gmail.com"
+  };
+
+  try {
+
+    await emailjs.send(
+      "service_6l8ib8o",
+      "template_ogls1i6",
+      templateParams
+    );
+
+    // Incrémentation compteur
+    messageData.count++;
+
+    localStorage.setItem(
+      "messageLimit",
+      JSON.stringify(messageData)
+    );
+
+    alert("✅ Message envoyé avec succès !");
+
+    // Reset formulaire
+    form.reset();
+
+  } catch (error) {
+
+    console.log(error);
+
+    alert("❌ Erreur lors de l'envoi.");
+
+  } finally {
+
+    sendBtn.disabled = false;
+    sendBtn.innerText = "Envoyer le message ↗";
+  }
 }
