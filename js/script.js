@@ -39,13 +39,13 @@ const sendBtn = document.getElementById("sendBtn");
 
 form.addEventListener("submit", sendMessages);
 // recapchat
-const captchaResponse =
+/*const captchaResponse =
   grecaptcha.getResponse();
 
 if(!captchaResponse){
     alert("Veuillez confirmer que vous n'êtes pas un robot...");
     return;
-}
+}*/
 async function sendMessages(event) {
 
   event.preventDefault();

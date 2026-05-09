@@ -1,472 +1,512 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mezatio Geril — Développeur Web & Mobile</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mezatio Geril — Développeur Web & Mobile</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
-  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="icon" type="image/png" href="images/logo3.png">
 
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="/" class="nav-logo">Mezatio <em>Geril</em></a>
-  <ul class="nav-links">
-    <li><a href="#about">À propos</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projets</a></li>
-    <li><a href="#contact" class="nav-cta">Me contacter</a></li>
-  </ul>
-  <button class="hamburger" id="ham" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div class="mobile-nav" id="mobileNav">
-  <a href="#about" onclick="closeNav()">À propos</a>
-  <a href="#skills" onclick="closeNav()">Skills</a>
-  <a href="#projects" onclick="closeNav()">Projets</a>
-  <a href="#contact" onclick="closeNav()">Contact</a>
-</div>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-bg-text">DEV</div>
-  <div class="hero-left">
-    <div class="hero-eyebrow">
-      <span class="dot-avail"></span>
-      Disponible — Ouvert aux projets
-    </div>
-    <h1 class="hero-name">
-      <span class="line1">Mezatio</span>
-      <span class="line2">Geril.</span>
-    </h1>
-    <p class="hero-desc">
-      Développeur <strong>Web & Mobile</strong> spécialisé en <strong>Java Spring Boot</strong>, <strong>Django REST</strong> et <strong>Flutter</strong>. Je construis des produits numériques complets — du serveur à l'écran.
-    </p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn btn-dark">Voir mes projets ↗</a>
-      <a href="#contact" class="btn btn-ghost">Discutons →</a>
-    </div>
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">Mezatio <em>Geril</em></a>
+    <ul class="nav-links">
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#contact" class="nav-cta">Me contacter</a></li>
+    </ul>
+    <button class="hamburger" id="ham" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about" onclick="closeNav()">À propos</a>
+    <a href="#skills" onclick="closeNav()">Skills</a>
+    <a href="#projects" onclick="closeNav()">Projets</a>
+    <a href="#contact" onclick="closeNav()">Contact</a>
   </div>
-  <div class="hero-right">
-    <div class="hero-card card-accent-lime">
-      <div class="hero-card-icon">🚀</div>
-      <div class="hero-card-label">Projets livrés</div>
-      <div class="hero-card-val">2+ <span>projets</span></div>
-    </div>
-    <div class="hero-card card-accent-coral">
-      <div class="hero-card-icon">⚡</div>
-      <div class="hero-card-label">Expérience</div>
-      <div class="hero-card-val">3+ <span>années</span></div>
-    </div>
-    <div class="hero-card card-accent-blue">
-      <div class="hero-card-icon">🛠️</div>
-      <div class="hero-card-label">Technologies</div>
-      <div class="hero-card-val">4 <span>stacks</span></div>
-    </div>
-  </div>
-</section>
 
-<!-- TECH STRIP -->
-<div class="tech-strip">
-  <span class="strip-label">Stack</span>
-  <div class="strip-divider"></div>
-  <div class="strip-items">
-    <div class="strip-item"><span>☕</span> Java Spring Boot</div>
-    <div class="strip-item"><span>🐍</span> Django</div>
-    <div class="strip-item"><span>💙</span> Flutter</div>
-    <div class="strip-item"><span>🗄️</span> PostgreSQL</div>
-    <div class="strip-item"><span>🐳</span> Docker</div>
-    <div class="strip-item"><span>🔥</span> Firebase</div>
-    <div class="strip-item"><span>🌐</span> REST API</div>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-layout">
-    <div>
-      <div class="s-label reveal">Qui suis-je</div>
-      <h2 class="s-title reveal">Passionné par le code,<br><em>obsédé</em> par la qualité.</h2>
-      <div class="about-body reveal">
-        <p>Je suis <strong>Mezatio Geril</strong>, développeur Web & Mobile basé au Cameroun. Mon quotidien, c'est concevoir et livrer des applications robustes, performantes et élégantes.</p>
-        <p>Mon expertise couvre le <strong>back-end Java Spring Boot</strong> pour les APIs sécurisées et scalables, <strong>Django</strong> pour les applications web Python, et <strong>Flutter</strong> pour des apps mobiles cross-platform qui cartonnent autant sur iOS qu'Android.</p>
-        <p>Ce qui me motive ? Transformer des idées complexes en produits simples à utiliser, avec un code propre dont je suis fier.</p>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg-text">DEV</div>
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="dot-avail"></span>
+        Disponible — Ouvert aux projets
       </div>
-      <div class="about-values reveal">
-        <div class="val-card">
-          <div class="val-icon">🏗️</div>
-          <div class="val-title">Architecture solide</div>
-          <div class="val-desc">Code maintenable, patterns éprouvés, APIs bien structurées.</div>
-        </div>
-        <div class="val-card">
-          <div class="val-icon">📱</div>
-          <div class="val-title">Mobile-First</div>
-          <div class="val-desc">Expériences mobiles fluides et performantes avec Flutter.</div>
-        </div>
-        <div class="val-card">
-          <div class="val-icon">⚡</div>
-          <div class="val-title">Performance</div>
-          <div class="val-desc">Optimisation des requêtes, caching, et temps de réponse rapides.</div>
-        </div>
-        <div class="val-card">
-          <div class="val-icon">🔐</div>
-          <div class="val-title">Sécurité</div>
-          <div class="val-desc">Authentification JWT, Spring Security, bonnes pratiques OWASP.</div>
-        </div>
+      <div class="hero-profile">
+
+        <img src="images/profile.jpg" alt="Photo de Mezatio Geril" class="profile-pic">
+
+        <h1 class="hero-name">
+          <span class="line1">Mezatio</span>
+          <span class="line2">Geril.</span>
+        </h1>
+
+      </div>
+      <p class="hero-desc">
+        Développeur <strong>Web & Mobile</strong> spécialisé en <strong>Java Spring Boot</strong>, <strong>Django
+          REST</strong> et <strong>Flutter</strong>. Je construis des produits numériques complets — du serveur à
+        l'écran.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-dark">Voir mes projets ↗</a>
+        <a href="#contact" class="btn btn-ghost">Discutons →</a>
       </div>
     </div>
-    <div class="about-aside reveal">
-      <div class="aside-block">
-        <div class="aside-block-title">Niveau de maîtrise</div>
-        <div class="lang-list" id="langList">
-          <div class="lang-item">
-            <span class="lang-name">Java Spring Boot</span>
-            <div class="lang-bar"><div class="lang-fill" style="width:92%"></div></div>
-            <span class="lang-pct">92%</span>
+    <div class="hero-right">
+      <div class="hero-card card-accent-lime">
+        <div class="hero-card-icon">🚀</div>
+        <div class="hero-card-label">Projets livrés</div>
+        <div class="hero-card-val">2+ <span>projets</span></div>
+      </div>
+      <div class="hero-card card-accent-coral">
+        <div class="hero-card-icon">⚡</div>
+        <div class="hero-card-label">Expérience</div>
+        <div class="hero-card-val">3+ <span>années</span></div>
+      </div>
+      <div class="hero-card card-accent-blue">
+        <div class="hero-card-icon">🛠️</div>
+        <div class="hero-card-label">Technologies</div>
+        <div class="hero-card-val">4 <span>stacks</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STRIP -->
+  <div class="tech-strip">
+    <span class="strip-label">Stack</span>
+    <div class="strip-divider"></div>
+    <div class="strip-items">
+      <div class="strip-item"><span>☕</span> Java Spring Boot</div>
+      <div class="strip-item"><span>🐍</span> Django</div>
+      <div class="strip-item"><span>💙</span> Flutter</div>
+      <div class="strip-item"><span>🗄️</span> PostgreSQL</div>
+      <div class="strip-item"><span>🐳</span> Docker</div>
+      <div class="strip-item"><span>🔥</span> Firebase</div>
+      <div class="strip-item"><span>🌐</span> REST API</div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-layout">
+      <div>
+        <div class="s-label reveal">Qui suis-je</div>
+        <h2 class="s-title reveal">Passionné par le code,<br><em>obsédé</em> par la qualité.</h2>
+        <div class="about-body reveal">
+          <p>Je suis <strong>Mezatio Geril</strong>, développeur Web & Mobile basé au Cameroun. Mon quotidien, c'est
+            concevoir et livrer des applications robustes, performantes et élégantes.</p>
+          <p>Mon expertise couvre le <strong>back-end Java Spring Boot</strong> pour les APIs sécurisées et scalables,
+            <strong>Django</strong> pour les applications web Python, et <strong>Flutter</strong> pour des apps mobiles
+            cross-platform qui cartonnent autant sur iOS qu'Android.</p>
+          <p>Ce qui me motive ? Transformer des idées complexes en produits simples à utiliser, avec un code propre dont
+            je suis fier.</p>
+        </div>
+        <div class="about-values reveal">
+          <div class="val-card">
+            <div class="val-icon">🏗️</div>
+            <div class="val-title">Architecture solide</div>
+            <div class="val-desc">Code maintenable, patterns éprouvés, APIs bien structurées.</div>
           </div>
-          <div class="lang-item">
-            <span class="lang-name">Flutter / Dart</span>
-            <div class="lang-bar"><div class="lang-fill" style="background:var(--coral);width:88%"></div></div>
-            <span class="lang-pct">88%</span>
+          <div class="val-card">
+            <div class="val-icon">📱</div>
+            <div class="val-title">Mobile-First</div>
+            <div class="val-desc">Expériences mobiles fluides et performantes avec Flutter.</div>
           </div>
-          <div class="lang-item">
-            <span class="lang-name">Django / Python</span>
-            <div class="lang-bar"><div class="lang-fill" style="background:#44b78b;width:85%"></div></div>
-            <span class="lang-pct">85%</span>
+          <div class="val-card">
+            <div class="val-icon">⚡</div>
+            <div class="val-title">Performance</div>
+            <div class="val-desc">Optimisation des requêtes, caching, et temps de réponse rapides.</div>
           </div>
-          <div class="lang-item">
-            <span class="lang-name">Bases de données</span>
-            <div class="lang-bar"><div class="lang-fill" style="background:var(--lime);width:80%"></div></div>
-            <span class="lang-pct">80%</span>
-          </div>
-          <div class="lang-item">
-            <span class="lang-name">DevOps / Docker</span>
-            <div class="lang-bar"><div class="lang-fill" style="background:#888;width:72%"></div></div>
-            <span class="lang-pct">72%</span>
+          <div class="val-card">
+            <div class="val-icon">🔐</div>
+            <div class="val-title">Sécurité</div>
+            <div class="val-desc">Authentification JWT, Spring Security, bonnes pratiques OWASP.</div>
           </div>
         </div>
       </div>
-      <div class="aside-block">
-        <div class="aside-block-title">Langues</div>
-        <div class="lang-list">
-          <div class="lang-item">
-            <span class="lang-name">🇫🇷 Français</span>
-            <div class="lang-bar"><div class="lang-fill visible" style="width:100%;transform:scaleX(1)"></div></div>
-            <span class="lang-pct">Natif</span>
+      <div class="about-aside reveal">
+        <div class="aside-block">
+          <div class="aside-block-title">Niveau de maîtrise</div>
+          <div class="lang-list" id="langList">
+            <div class="lang-item">
+              <span class="lang-name">Java Spring Boot</span>
+              <div class="lang-bar">
+                <div class="lang-fill" style="width:92%"></div>
+              </div>
+              <span class="lang-pct">92%</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">Flutter / Dart</span>
+              <div class="lang-bar">
+                <div class="lang-fill" style="background:var(--coral);width:88%"></div>
+              </div>
+              <span class="lang-pct">88%</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">Django / Python</span>
+              <div class="lang-bar">
+                <div class="lang-fill" style="background:#44b78b;width:85%"></div>
+              </div>
+              <span class="lang-pct">85%</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">Bases de données</span>
+              <div class="lang-bar">
+                <div class="lang-fill" style="background:var(--lime);width:80%"></div>
+              </div>
+              <span class="lang-pct">80%</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">DevOps / Docker</span>
+              <div class="lang-bar">
+                <div class="lang-fill" style="background:#888;width:72%"></div>
+              </div>
+              <span class="lang-pct">72%</span>
+            </div>
           </div>
-          <div class="lang-item">
-            <span class="lang-name">🇬🇧 Anglais</span>
-            <div class="lang-bar"><div class="lang-fill visible" style="background:var(--coral);width:25%;transform:scaleX(1)"></div></div>
-            <span class="lang-pct">Debrouillard</span>
+        </div>
+        <div class="aside-block">
+          <div class="aside-block-title">Langues</div>
+          <div class="lang-list">
+            <div class="lang-item">
+              <span class="lang-name">🇫🇷 Français</span>
+              <div class="lang-bar">
+                <div class="lang-fill visible" style="width:100%;transform:scaleX(1)"></div>
+              </div>
+              <span class="lang-pct">Natif</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">🇬🇧 Anglais</span>
+              <div class="lang-bar">
+                <div class="lang-fill visible" style="background:var(--coral);width:25%;transform:scaleX(1)"></div>
+              </div>
+              <span class="lang-pct">Debrouillard</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="s-label reveal">Compétences</div>
-  <h2 class="s-title reveal">Mon <em>arsenal</em> technique</h2>
-  <div class="skills-wrapper">
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="s-label reveal">Compétences</div>
+    <h2 class="s-title reveal">Mon <em>arsenal</em> technique</h2>
+    <div class="skills-wrapper">
 
-    <div class="skill-card-v2 reveal" data-tech="SB">
-      <div class="sk-top">
-        <span class="sk-emoji">☕</span>
-        <span class="sk-badge badge-lime">Expert</span>
-      </div>
-      <div class="sk-name">Java Spring Boot</div>
-      <div class="sk-desc">APIs RESTful robustes, microservices, sécurité avancée et persistance des données.</div>
-      <div class="sk-tags">
-        <span class="sk-tag">Spring MVC</span>
-        <span class="sk-tag">Spring Security</span>
-        <span class="sk-tag">JPA / Hibernate</span>
-        <span class="sk-tag">JWT</span>
-        <span class="sk-tag">Maven</span>
-      </div>
-    </div>
-
-    <div class="skill-card-v2 reveal" data-tech="DJ">
-      <div class="sk-top">
-        <span class="sk-emoji">🐍</span>
-        <span class="sk-badge badge-coral">Avancé</span>
-      </div>
-      <div class="sk-name">Django</div>
-      <div class="sk-desc">Applications web Python performantes avec DRF, tâches async et déploiement cloud.</div>
-      <div class="sk-tags">
-        <span class="sk-tag">Django REST</span>
-        <span class="sk-tag">ORM</span>
-        <span class="sk-tag">Celery</span>
-        <span class="sk-tag">PostgreSQL</span>
-        <span class="sk-tag">Docker</span>
-      </div>
-    </div>
-
-    <div class="skill-card-v2 reveal" data-tech="FL">
-      <div class="sk-top">
-        <span class="sk-emoji">💙</span>
-        <span class="sk-badge badge-blue">Expert</span>
-      </div>
-      <div class="sk-name">Flutter</div>
-      <div class="sk-desc">Applications mobiles cross-platform belles et performantes pour iOS et Android.</div>
-      <div class="sk-tags">
-        <span class="sk-tag">Dart</span>
-        <span class="sk-tag">BLoC</span>
-        <span class="sk-tag">Provider</span>
-        <span class="sk-tag">Firebase</span>
-        <span class="sk-tag">GetX</span>
-      </div>
-    </div>
-
-    <div class="skill-card-v2 reveal" data-tech="DB">
-      <div class="sk-top">
-        <span class="sk-emoji">🗄️</span>
-        <span class="sk-badge badge-lime">Avancé</span>
-      </div>
-      <div class="sk-name">Bases de Données</div>
-      <div class="sk-desc">Conception de schémas, optimisation des requêtes et gestion des migrations.</div>
-      <div class="sk-tags">
-        <span class="sk-tag">PostgreSQL</span>
-        <span class="sk-tag">MySQL</span>
-      </div>
-    </div>
-
-    <div class="skill-card-v2 reveal" data-tech="WB">
-      <div class="sk-top">
-        <span class="sk-emoji">🌐</span>
-        <span class="sk-badge badge-coral">Intermédiaire</span>
-      </div>
-      <div class="sk-name">Front-End Web</div>
-      <div class="sk-desc">Interfaces web modernes, responsives et accessibles.</div>
-      <div class="sk-tags">
-        <span class="sk-tag">HTML / CSS</span>
-        <span class="sk-tag">JavaScript</span>
-        <span class="sk-tag">React</span>
-        <span class="sk-tag">Bootstrap</span>
-      </div>
-    </div>
-
-    <div class="skill-card-v2 reveal" data-tech="DO">
-      <div class="sk-top">
-        <span class="sk-emoji">🛠️</span>
-        <span class="sk-badge badge-blue">Intermédiaire</span>
-      </div>
-      <div class="sk-name">DevOps & Outils</div>
-      <div class="sk-desc">Containerisation, intégration continue et déploiement cloud.</div>
-      <div class="sk-tags">
-        <span class="sk-tag">Docker</span>
-        <span class="sk-tag">Git / GitHub</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="s-label reveal">Projets</div>
-  <h2 class="s-title reveal">Ce que j'ai <em>construit</em></h2>
-  <div class="projects-wrapper">
-
-    <div class="proj-card reveal">
-      <div class="proj-header" style="background: linear-gradient(135deg,#1e3a8a,#3b82f6);">
-        🏦
-        <span class="proj-num">01</span>
-        <span class="proj-type">Spring Boot</span>
-      </div>
-      <div class="proj-body">
-        <div class="proj-techs">
-          <span class="proj-tech">Java</span><span class="proj-tech">Spring Boot</span><span class="proj-tech">PostgreSQL</span><span class="proj-tech">JWT</span>
+      <div class="skill-card-v2 reveal" data-tech="SB">
+        <div class="sk-top">
+          <span class="sk-emoji">☕</span>
+          <span class="sk-badge badge-lime">Expert</span>
         </div>
-        <div class="proj-name">API Alimantation Sécurisée</div>
-        <div class="proj-desc">API RESTful pour une application d'alimentation — gestion comptes, consomation de planning avec JWT et Spring Security.</div>
-        <div class="proj-links">
-          <a href="https://github.com/MEZA-1/gestion_alimentaire" class="proj-link">GitHub <span class="proj-link-arrow">→</span></a>
-          <a href="#" class="proj-link">Demo <span class="proj-link-arrow">→</span></a>
+        <div class="sk-name">Java Spring Boot</div>
+        <div class="sk-desc">APIs RESTful robustes, microservices, sécurité avancée et persistance des données.</div>
+        <div class="sk-tags">
+          <span class="sk-tag">Spring MVC</span>
+          <span class="sk-tag">Spring Security</span>
+          <span class="sk-tag">JPA / Hibernate</span>
+          <span class="sk-tag">JWT</span>
+          <span class="sk-tag">Maven</span>
         </div>
       </div>
+
+      <div class="skill-card-v2 reveal" data-tech="DJ">
+        <div class="sk-top">
+          <span class="sk-emoji">🐍</span>
+          <span class="sk-badge badge-coral">Avancé</span>
+        </div>
+        <div class="sk-name">Django</div>
+        <div class="sk-desc">Applications web Python performantes avec DRF, tâches async et déploiement cloud.</div>
+        <div class="sk-tags">
+          <span class="sk-tag">Django REST</span>
+          <span class="sk-tag">ORM</span>
+          <span class="sk-tag">Celery</span>
+          <span class="sk-tag">PostgreSQL</span>
+          <span class="sk-tag">Docker</span>
+        </div>
+      </div>
+
+      <div class="skill-card-v2 reveal" data-tech="FL">
+        <div class="sk-top">
+          <span class="sk-emoji">💙</span>
+          <span class="sk-badge badge-blue">Expert</span>
+        </div>
+        <div class="sk-name">Flutter</div>
+        <div class="sk-desc">Applications mobiles cross-platform belles et performantes pour iOS et Android.</div>
+        <div class="sk-tags">
+          <span class="sk-tag">Dart</span>
+          <span class="sk-tag">BLoC</span>
+          <span class="sk-tag">Provider</span>
+          <span class="sk-tag">Firebase</span>
+          <span class="sk-tag">GetX</span>
+        </div>
+      </div>
+
+      <div class="skill-card-v2 reveal" data-tech="DB">
+        <div class="sk-top">
+          <span class="sk-emoji">🗄️</span>
+          <span class="sk-badge badge-lime">Avancé</span>
+        </div>
+        <div class="sk-name">Bases de Données</div>
+        <div class="sk-desc">Conception de schémas, optimisation des requêtes et gestion des migrations.</div>
+        <div class="sk-tags">
+          <span class="sk-tag">PostgreSQL</span>
+          <span class="sk-tag">MySQL</span>
+        </div>
+      </div>
+
+      <div class="skill-card-v2 reveal" data-tech="WB">
+        <div class="sk-top">
+          <span class="sk-emoji">🌐</span>
+          <span class="sk-badge badge-coral">Intermédiaire</span>
+        </div>
+        <div class="sk-name">Front-End Web</div>
+        <div class="sk-desc">Interfaces web modernes, responsives et accessibles.</div>
+        <div class="sk-tags">
+          <span class="sk-tag">HTML / CSS</span>
+          <span class="sk-tag">JavaScript</span>
+          <span class="sk-tag">React</span>
+          <span class="sk-tag">Bootstrap</span>
+        </div>
+      </div>
+
+      <div class="skill-card-v2 reveal" data-tech="DO">
+        <div class="sk-top">
+          <span class="sk-emoji">🛠️</span>
+          <span class="sk-badge badge-blue">Intermédiaire</span>
+        </div>
+        <div class="sk-name">DevOps & Outils</div>
+        <div class="sk-desc">Containerisation, intégration continue et déploiement cloud.</div>
+        <div class="sk-tags">
+          <span class="sk-tag">Docker</span>
+          <span class="sk-tag">Git / GitHub</span>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-    <div class="proj-card reveal">
-      <div class="proj-header" style="background: linear-gradient(135deg,#14532d,#22c55e);">
-        🛒
-        <span class="proj-num">02</span>
-        <span class="proj-type">Django</span>
-      </div>
-      <div class="proj-body">
-        <div class="proj-techs">
-          <span class="proj-tech">Python</span><span class="proj-tech">Django</span><span class="proj-tech">DRF</span><span class="proj-tech">Docker</span>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="s-label reveal">Projets</div>
+    <h2 class="s-title reveal">Ce que j'ai <em>construit</em></h2>
+    <div class="projects-wrapper">
+
+      <div class="proj-card reveal">
+        <div class="proj-header" style="background: linear-gradient(135deg,#1e3a8a,#3b82f6);">
+          🏦
+          <span class="proj-num">01</span>
+          <span class="proj-type">Spring Boot</span>
         </div>
-        <div class="proj-name">Plateforme de Facturation</div>
-        <div class="proj-desc">Application de Facturation full-stack avec gestion produits, articles, facture, user, et admin dashboard.</div>
-        <div class="proj-links">
-          <a href="https://github.com/MEZA-1/projet1_facture" class="proj-link">GitHub <span class="proj-link-arrow">→</span></a>
-          <a href="#" class="proj-link">Demo <span class="proj-link-arrow">→</span></a>
+        <div class="proj-body">
+          <div class="proj-techs">
+            <span class="proj-tech">Java</span><span class="proj-tech">Spring Boot</span><span
+              class="proj-tech">PostgreSQL</span><span class="proj-tech">JWT</span>
+          </div>
+          <div class="proj-name">API Alimantation Sécurisée</div>
+          <div class="proj-desc">API RESTful pour une application d'alimentation — gestion comptes, consomation de
+            planning avec JWT et Spring Security.</div>
+          <div class="proj-links">
+            <a href="https://github.com/MEZA-1/gestion_alimentaire" class="proj-link">GitHub <span
+                class="proj-link-arrow">→</span></a>
+            <a href="#" class="proj-link">Demo <span class="proj-link-arrow">→</span></a>
+          </div>
         </div>
       </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-header" style="background: linear-gradient(135deg,#14532d,#22c55e);">
+          🛒
+          <span class="proj-num">02</span>
+          <span class="proj-type">Django</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-techs">
+            <span class="proj-tech">Python</span><span class="proj-tech">Django</span><span
+              class="proj-tech">DRF</span><span class="proj-tech">Docker</span>
+          </div>
+          <div class="proj-name">Plateforme de Facturation</div>
+          <div class="proj-desc">Application de Facturation full-stack avec gestion produits, articles, facture, user,
+            et admin dashboard.</div>
+          <div class="proj-links">
+            <a href="https://github.com/MEZA-1/projet1_facture" class="proj-link">GitHub <span
+                class="proj-link-arrow">→</span></a>
+            <a href="#" class="proj-link">Demo <span class="proj-link-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-header" style="background: linear-gradient(135deg,#1e1b4b,#7c3aed);">
+          📱
+          <span class="proj-num">03</span>
+          <span class="proj-type">Flutter</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-techs">
+            <span class="proj-tech">Flutter</span><span class="proj-tech">Dart</span><span
+              class="proj-tech">Firebase</span><span class="proj-tech">BLoC</span>
+          </div>
+          <div class="proj-name">App de Gestion de Tâches</div>
+          <div class="proj-desc">App mobile cross-platform avec notifications push, synchronisation temps réel et mode
+            hors-ligne.</div>
+          <div class="proj-links">
+            <a href="#" class="proj-link">GitHub <span class="proj-link-arrow">→</span></a>
+            <a href="#" class="proj-link">Play Store <span class="proj-link-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-header" style="background: linear-gradient(135deg,#7f1d1d,#ef4444);">
+          🏥
+          <span class="proj-num">04</span>
+          <span class="proj-type">Full-Stack</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-techs">
+            <span class="proj-tech">Spring Boot</span><span class="proj-tech">Flutter</span><span
+              class="proj-tech">MySQL</span>
+          </div>
+          <div class="proj-name">Système de Santé</div>
+          <div class="proj-desc">Solution clinique complète : gestion patients, rendez-vous et dossiers médicaux avec
+            API Spring Boot + app Flutter.</div>
+          <div class="proj-links">
+            <a href="#" class="proj-link">GitHub <span class="proj-link-arrow">→</span></a>
+            <a href="#" class="proj-link">Demo <span class="proj-link-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-header" style="background: linear-gradient(135deg,#713f12,#f59e0b);">
+          📊
+          <span class="proj-num">05</span>
+          <span class="proj-type">Django</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-techs">
+            <span class="proj-tech">Django</span><span class="proj-tech">Celery</span><span
+              class="proj-tech">Redis</span><span class="proj-tech">Chart.js</span>
+          </div>
+          <div class="proj-name">Dashboard Analytics</div>
+          <div class="proj-desc">Tableau de bord avec tâches asynchrones Celery, visualisation de données temps réel et
+            rapports automatisés.</div>
+          <div class="proj-links">
+            <a href="#" class="proj-link">GitHub <span class="proj-link-arrow">→</span></a>
+            <a href="#" class="proj-link">Demo <span class="proj-link-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-header" style="background: linear-gradient(135deg,#0c4a6e,#0ea5e9);">
+          💬
+          <span class="proj-num">06</span>
+          <span class="proj-type">Full-Stack</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-techs">
+            <span class="proj-tech">Spring Boot</span><span class="proj-tech">WebSocket</span><span
+              class="proj-tech">Flutter</span>
+          </div>
+          <div class="proj-name">App de Messagerie</div>
+          <div class="proj-desc">Messagerie instantanée avec WebSockets Spring Boot, chiffrement E2E et interface
+            Flutter cross-platform.</div>
+          <div class="proj-links">
+            <a href="#" class="proj-link">GitHub <span class="proj-link-arrow">→</span></a>
+            <a href="#" class="proj-link">Demo <span class="proj-link-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-    <div class="proj-card reveal">
-      <div class="proj-header" style="background: linear-gradient(135deg,#1e1b4b,#7c3aed);">
-        📱
-        <span class="proj-num">03</span>
-        <span class="proj-type">Flutter</span>
-      </div>
-      <div class="proj-body">
-        <div class="proj-techs">
-          <span class="proj-tech">Flutter</span><span class="proj-tech">Dart</span><span class="proj-tech">Firebase</span><span class="proj-tech">BLoC</span>
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-layout">
+      <div class="reveal">
+        <div class="s-label">Contact</div>
+        <h2 class="s-title">Travaillons<br><em>ensemble.</em></h2>
+        <p>Vous avez un projet, une idée, ou simplement envie de discuter tech ? Je suis disponible pour des missions
+          freelance, des collaborations et des opportunités full-time.</p>
+        <div class="contact-methods">
+          <a href="mailto:mezatio.geril@email.com" class="c-method">
+            <span class="c-icon">✉️</span> mezatio.geril@email.com
+          </a>
+          <a href="https://github.com/MEZA-1" target="_blank" class="c-method">
+            <span class="c-icon">🐙</span> github.com/mezatiogeril
+          </a>
+          <a href="https://linkedin.com/" target="_blank" class="c-method">
+            <span class="c-icon">💼</span> linkedin.com/in/mezatiogeril
+          </a>
+          <a href="tel:+237671928859" class="c-method">
+            <span class="c-icon">📞</span> +237 671928859
+          </a>
         </div>
-        <div class="proj-name">App de Gestion de Tâches</div>
-        <div class="proj-desc">App mobile cross-platform avec notifications push, synchronisation temps réel et mode hors-ligne.</div>
-        <div class="proj-links">
-          <a href="#" class="proj-link">GitHub <span class="proj-link-arrow">→</span></a>
-          <a href="#" class="proj-link">Play Store <span class="proj-link-arrow">→</span></a>
-        </div>
       </div>
+      <form id="contactForm">
+        <div class="contact-form reveal">
+          <div class="g-recaptcha" data-sitekey="6LfF5d4sAAAAALkSxjoyTe2lkpJXEFL3JNxio8h3">
+          </div>
+          <div class="f-row">
+            <div class="f-group">
+              <label>Nom</label>
+              <input type="text" required id="name" placeholder="Votre nom">
+            </div>
+            <div class="f-group">
+              <label>Email</label>
+              <input type="email" required id="email" placeholder="votre@email.com">
+            </div>
+          </div>
+          <div class="f-group">
+            <label>Sujet</label>
+            <input type="text" required id="sujet" placeholder="Projet, mission, collaboration...">
+          </div>
+          <div class="f-group">
+            <textarea required id="messages" placeholder="Décrivez votre projet ou votre besoin..."></textarea>
+          </div>
+          <button class="btn btn-lime" type="submit" class="btn btn-lime" id="sendBtn">
+            Envoyer le message ↗
+          </button>
+        </div>
+      </form>
     </div>
+  </section>
 
-    <div class="proj-card reveal">
-      <div class="proj-header" style="background: linear-gradient(135deg,#7f1d1d,#ef4444);">
-        🏥
-        <span class="proj-num">04</span>
-        <span class="proj-type">Full-Stack</span>
-      </div>
-      <div class="proj-body">
-        <div class="proj-techs">
-          <span class="proj-tech">Spring Boot</span><span class="proj-tech">Flutter</span><span class="proj-tech">MySQL</span>
-        </div>
-        <div class="proj-name">Système de Santé</div>
-        <div class="proj-desc">Solution clinique complète : gestion patients, rendez-vous et dossiers médicaux avec API Spring Boot + app Flutter.</div>
-        <div class="proj-links">
-          <a href="#" class="proj-link">GitHub <span class="proj-link-arrow">→</span></a>
-          <a href="#" class="proj-link">Demo <span class="proj-link-arrow">→</span></a>
-        </div>
-      </div>
+  <!-- FOOTER -->
+  <footer>
+    <div class="f-left">© 2026 <strong>Mezatio Geril</strong> — Tous droits réservés</div>
+    <div class="f-right">
+      <a href="#about">À propos</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projets</a>
+      <a href="#contact">Contact</a>
     </div>
+  </footer>
 
-    <div class="proj-card reveal">
-      <div class="proj-header" style="background: linear-gradient(135deg,#713f12,#f59e0b);">
-        📊
-        <span class="proj-num">05</span>
-        <span class="proj-type">Django</span>
-      </div>
-      <div class="proj-body">
-        <div class="proj-techs">
-          <span class="proj-tech">Django</span><span class="proj-tech">Celery</span><span class="proj-tech">Redis</span><span class="proj-tech">Chart.js</span>
-        </div>
-        <div class="proj-name">Dashboard Analytics</div>
-        <div class="proj-desc">Tableau de bord avec tâches asynchrones Celery, visualisation de données temps réel et rapports automatisés.</div>
-        <div class="proj-links">
-          <a href="#" class="proj-link">GitHub <span class="proj-link-arrow">→</span></a>
-          <a href="#" class="proj-link">Demo <span class="proj-link-arrow">→</span></a>
-        </div>
-      </div>
-    </div>
+  <script src="js/script.js">
 
-    <div class="proj-card reveal">
-      <div class="proj-header" style="background: linear-gradient(135deg,#0c4a6e,#0ea5e9);">
-        💬
-        <span class="proj-num">06</span>
-        <span class="proj-type">Full-Stack</span>
-      </div>
-      <div class="proj-body">
-        <div class="proj-techs">
-          <span class="proj-tech">Spring Boot</span><span class="proj-tech">WebSocket</span><span class="proj-tech">Flutter</span>
-        </div>
-        <div class="proj-name">App de Messagerie</div>
-        <div class="proj-desc">Messagerie instantanée avec WebSockets Spring Boot, chiffrement E2E et interface Flutter cross-platform.</div>
-        <div class="proj-links">
-          <a href="#" class="proj-link">GitHub <span class="proj-link-arrow">→</span></a>
-          <a href="#" class="proj-link">Demo <span class="proj-link-arrow">→</span></a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-layout">
-    <div class="reveal">
-      <div class="s-label">Contact</div>
-      <h2 class="s-title">Travaillons<br><em>ensemble.</em></h2>
-      <p>Vous avez un projet, une idée, ou simplement envie de discuter tech ? Je suis disponible pour des missions freelance, des collaborations et des opportunités full-time.</p>
-      <div class="contact-methods">
-        <a href="mailto:mezatio.geril@email.com" class="c-method">
-          <span class="c-icon">✉️</span> mezatio.geril@email.com
-        </a>
-        <a href="https://github.com/MEZA-1" target="_blank" class="c-method">
-          <span class="c-icon">🐙</span> github.com/mezatiogeril
-        </a>
-        <a href="https://linkedin.com/" target="_blank" class="c-method">
-          <span class="c-icon">💼</span> linkedin.com/in/mezatiogeril
-        </a>
-        <a href="tel:+237671928859" class="c-method">
-          <span class="c-icon">📞</span> +237 671928859
-        </a>
-      </div>
-    </div>
-    <form id="contactForm">
-      <div class="contact-form reveal">
-        <div 
-  class="g-recaptcha"
-  data-sitekey="6LfF5d4sAAAAALkSxjoyTe2lkpJXEFL3JNxio8h3">
-</div>
-      <div class="f-row">
-        <div class="f-group">
-          <label>Nom</label>
-          <input type="text" required id="name" placeholder="Votre nom">
-        </div>
-        <div class="f-group">
-          <label>Email</label>
-          <input type="email" required id="email" placeholder="votre@email.com">
-        </div>
-      </div>
-      <div class="f-group">
-        <label>Sujet</label>
-        <input type="text"required id="sujet" placeholder="Projet, mission, collaboration...">
-      </div>
-      <div class="f-group">
-        <textarea 
-        required
-        id="messages"
-        placeholder="Décrivez votre projet ou votre besoin..."
-      ></textarea>
-      </div>
-      <button class="btn btn-lime"  type="submit"
-      class="btn btn-lime"
-      id="sendBtn">
-        Envoyer le message ↗
-      </button>
-    </div>
-    </form>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="f-left">© 2026 <strong>Mezatio Geril</strong> — Tous droits réservés</div>
-  <div class="f-right">
-    <a href="#about">À propos</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projets</a>
-    <a href="#contact">Contact</a>
-  </div>
-</footer>
-
-<script src="js/script.js">
-
-</script>
+  </script>
 </body>
+
 </html>
