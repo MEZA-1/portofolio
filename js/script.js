@@ -28,6 +28,41 @@ const barObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 document.querySelectorAll('#about .about-aside').forEach(el => barObs.observe(el));
 
+// fonction qui verifie si le message envyer est un srcipt ou pas
+function containsSuspiciousCode(text) {
+
+  const patterns = [
+
+    /<script.*?>.*?<\/script>/gi,
+
+    /<.*?>/g,
+
+    /javascript:/gi,
+
+    /onerror=/gi,
+
+    /onload=/gi,
+
+    /SELECT.*FROM/gi,
+
+    /INSERT INTO/gi,
+
+    /DELETE FROM/gi,
+
+    /DROP TABLE/gi,
+
+    /UNION SELECT/gi,
+
+    /document\.cookie/gi,
+
+    /eval\(/gi
+
+  ];
+
+  return patterns.some(pattern =>
+    pattern.test(text)
+  );
+}
 
 
 // messages send
@@ -38,10 +73,11 @@ const form = document.getElementById("contactForm");
 const sendBtn = document.getElementById("sendBtn");
 
 form.addEventListener("submit", sendMessages);
-// recapchat
+
 
 
 async function sendMessages(event) {
+// recapchat
 
   event.preventDefault();
 
@@ -51,6 +87,8 @@ if(!captchaResponse){
     alert("Veuillez confirmer que vous n'êtes pas un robot...");
     return;
 }
+
+
 
   // ===== LIMITATION 5 MESSAGES / JOUR =====
 
@@ -101,6 +139,12 @@ if(!captchaResponse){
   // Anti spam simple
   if (message.length < 10) {
     alert("Message trop court.");
+    return;
+  }
+
+  //verifie s'il y a des codes malveillants dans le message
+  if (containsSuspiciousCode(message) || containsSuspiciousCode(nom) || containsSuspiciousCode(email) || containsSuspiciousCode(sujet)) {
+    alert("Vos champs contiennent du code potentiellement dangereux.");
     return;
   }
 
